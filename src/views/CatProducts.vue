@@ -1,5 +1,5 @@
 <template>
-  <div class="row justify-content-center mx-10 my-10">
+  <div class="row justify-content-center" style="width: 80%; margin: 5rem auto">
     <div v-for="product in catProducts" :key="product.id" class="col-md-4">
       <div class="card my-3" style="border-radius: 15px">
         <div style="height: 15rem">

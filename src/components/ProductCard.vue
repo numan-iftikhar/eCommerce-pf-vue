@@ -5,9 +5,11 @@
         <div style="height: 15rem">
           <img
             :src="product.thumbnail"
-            style="border-top-left-radius: 15px;
+            style="
+              border-top-left-radius: 15px;
               border-top-right-radius: 15px;
-              object-fit: contain;"
+              object-fit: contain;
+            "
             class="img-fluid h-100 w-100"
             :alt="title"
           />
@@ -47,6 +49,11 @@
 </template>
 
 <script>
+// import the package
+import VueAwesomePaginate from "vue-awesome-paginate";
+
+// import the necessary css file
+import "vue-awesome-paginate/dist/style.css";
 export default {
   data() {
     return {
