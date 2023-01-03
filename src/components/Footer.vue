@@ -8,9 +8,6 @@
         <router-link to="/catalog">Catalog</router-link>
       </li>
       <li>
-        <router-link to="/product">Product</router-link>
-      </li>
-      <li>
         <router-link to="#">About</router-link>
       </li>
       <li>
@@ -30,6 +27,7 @@
   list-style: none;
   background: gray;
   padding: 2rem 0;
+  margin-bottom: 0;
 }
 .copyright {
   background: rgb(34, 25, 25);

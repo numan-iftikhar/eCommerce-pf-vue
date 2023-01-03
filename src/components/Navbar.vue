@@ -4,7 +4,6 @@
     <ul class="nav-links">
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/catalog">Catalog</router-link></li>
-      <li><router-link to="/product">Product</router-link></li>
       <li>
         <router-link to="/login" class="login-btn"
           ><v-btn color="secondary" elevation="2">Login</v-btn></router-link
@@ -36,7 +35,7 @@ a:hover {
 }
 nav {
   background: #000080;
-  padding: 5px 2rem;
+  padding: 1rem 2rem;
   color: #fff;
   display: flex;
   align-items: center;

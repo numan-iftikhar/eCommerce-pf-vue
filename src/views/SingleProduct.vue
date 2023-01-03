@@ -51,6 +51,10 @@ export default {
   grid-template-rows: 1fr;
   font-family: "Raleway", sans-serif;
   background-color: #eee;
+  margin: 3rem auto;
+  width: 70%;
+  padding: 5rem 10rem;
+  border-radius: 1rem;
 }
 h3 {
   font-size: 0.7em;
@@ -86,14 +90,17 @@ img {
   box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
 }
 .photo-main {
+  /* width: 10rem; */
   border-radius: 6px 6px 0 0;
   background: radial-gradient(#e5f89e, #ccc);
 }
 
 .photo-main img {
   position: absolute;
-  left: -3.5em;
-  top: 6rem;
+  left: -2rem;
+  top: 3rem;
+  width: 80%;
+  height: 80%;
   max-width: 110%;
   filter: saturate(150%) contrast(120%) hue-rotate(10deg)
     drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
@@ -130,15 +137,6 @@ img {
 .description h3 {
   margin-bottom: 1em;
 }
-.description ul {
-  font-size: 0.8em;
-  list-style: square;
-  margin-left: 1em;
-}
-.description li {
-  text-indent: -0.6em;
-  margin-bottom: 0.5em;
-}
 .buy--btn {
   padding: 1.5em 3.1em;
   border: none;
@@ -153,22 +151,5 @@ img {
 }
 .buy--btn:active {
   transform: scale(0.97);
-}
-
-/* footer styles */
-.footer-links {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-  background: lightgray;
-  padding: 2rem 0;
-  margin-bottom: 0;
-}
-.copyright {
-  background: #6f00ff;
-  text-align: center;
-  padding: 1rem 0;
-  color: #fff;
 }
 </style>
