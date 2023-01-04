@@ -43,27 +43,6 @@ export default {
 };
 </script>
 <style scoped>
-/* .search-wrapper {
-  border: 1px solid white;
-  border-radius: 5px;
-  margin-left: auto;
-}
-.search-btn {
-  background: lightskyblue;
-  color: black;
-  padding: 1px 5px;
-  border-radius: 0 5px 5px 0;
-  font-weight: bold;
-  outline: none;
-}
-input[type="text"] {
-  border: none;
-  outline: none;
-  background: white;
-  padding: 1px 5px;
-  border-radius: 5px 0 0 5px;
-} */
-
 .search_wrap {
   width: 500px;
   margin: 38px auto;
