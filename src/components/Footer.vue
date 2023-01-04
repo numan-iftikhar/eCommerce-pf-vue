@@ -1,43 +1,116 @@
 <template>
-  <section>
-    <ul class="footer-links">
-      <li>
-        <router-link to="/">Home</router-link>
-      </li>
-      <li>
-        <router-link to="/catalog">Catalog</router-link>
-      </li>
-      <li>
-        <router-link to="#">About</router-link>
-      </li>
-      <li>
-        <router-link to="#">New</router-link>
-      </li>
-    </ul>
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col-1">
+          <h3>Download Our App</h3>
+          <p>
+            Download App for Android <br />
+            and ios mobile phone
+          </p>
+          <div class="app-logo">
+            <img src="../assets/images/google-play.png" alt="" />
+            <img src="../assets/images/google-play.png" alt="" />
+          </div>
+        </div>
+        <div class="footer-col-2">
+          <div class="logo">eCommerce</div>
+          <!-- <img src="images/logo-white.png" alt="" /> -->
+          <p>
+            Lorem, ipsum dolor sit amet consectetur <br />adipisicing elit.
+            Porro, eum?
+          </p>
+        </div>
+        <div class="footer-col-3">
+          <h3>Useful Links</h3>
+          <ul>
+            <li>Coupons</li>
+            <li>Blog Post</li>
+            <li>Return Policy</li>
+            <li>Join Affiliate</li>
+          </ul>
+        </div>
 
-    <div class="copyright">copyright&copy;2023</div>
-  </section>
+        <div class="footer-col-4">
+          <h3>Follow us</h3>
+          <ul>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Instagram</li>
+            <li>YouTube</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <p class="copyright">Copyright 2022 - ecommerce.com</p>
+    </div>
+  </div>
 </template>
 
 <style>
-.footer-links {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-  background: gray;
-  padding: 2rem 0;
-  margin-bottom: 0;
+.footer {
+  background: #000;
+  color: #8a8a8a;
+  font-size: 14px;
+  padding: 60px 0 20px;
+}
+.footer p {
+  color: #8a8a8a;
+}
+.footer h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+.footer-col-1,
+.footer-col-2,
+.footer-col-3,
+.footer-col-4 {
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-col-1 {
+  flex-basis: 30px;
+}
+
+.footer-col-2 {
+  flex: 1;
+  text-align: center;
+}
+.footer-col-2 .logo {
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+}
+.footer-col-3,
+.footer-col-4 {
+  flex-basis: 12%;
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+}
+.app-logo {
+  margin-top: 20px;
+}
+.app-logo img {
+  width: 140px;
+  margin-bottom: 1rem;
+}
+
+.footer hr {
+  border: none;
+  background: #b5b5b5;
+  height: 1px;
+  margin: 20px 0;
 }
 .copyright {
-  background: rgb(34, 25, 25);
   text-align: center;
-  padding: 1rem 0;
-  color: white;
 }
-a {
-  text-decoration: none;
-  font-size: 1rem;
-  color: #fff;
+.menu-icon {
+  width: 28px;
+  margin-left: 20px;
+  /* display: none; */
 }
 </style>
