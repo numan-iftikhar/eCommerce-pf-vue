@@ -2,8 +2,8 @@
   <nav>
     <router-link to="/" class="logo">Vuejs</router-link>
     <div class="search-wrapper">
-      <input type="text" />
-      <button class="search-btn">>></button>
+      <input v-model="searchText" type="text" />
+      <button @click="handleSearch" class="search-btn">>></button>
     </div>
     <ul class="nav-links">
       <li><router-link to="/">Home</router-link></li>
@@ -16,7 +16,24 @@
     </ul>
   </nav>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      searchText: "",
+    };
+  },
 
+  methods: {
+    handleSearch() {
+      this.$router.push({
+        name: "SearchedProducts",
+        params: { query: this.searchText },
+      });
+    },
+  },
+};
+</script>
 <style scoped>
 .search-wrapper {
   border: 1px solid white;

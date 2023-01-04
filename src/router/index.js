@@ -25,6 +25,11 @@ const routes = [
     component: () => import("@/views/SingleProduct.vue"),
   },
   {
+    name: "SearchedProducts",
+    path: "/search/:query",
+    component: () => import("@/views/SearchedProducts.vue"),
+  },
+  {
     path: "/:notFound(.*)",
     component: () => import("@/views/ErrorPage.vue"),
   },
