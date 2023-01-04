@@ -11,11 +11,9 @@
     "boostrap": "^2.0.0",
     "roboto-fontface": "*",
     "vue": "^3.2.38",
-    "vue-awesome-paginate": "^1.1.46",
-    "vue-paginate": "^3.6.0",
     "vue-router": "^4.0.0",
-    "vuejs-paginate": "^2.1.0",
     "vuetify": "^3.0.0",
+    "vuex": "^4.1.0",
     "webfontloader": "^1.0.0"
   },
   "devDependencies": {
