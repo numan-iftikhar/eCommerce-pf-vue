@@ -1,5 +1,5 @@
 <template>
-  <h2 class="display-3 text-center mt-5">Catalog</h2>
+  <h2 class="display-3 text-muted text-center mt-5">Catalog</h2>
   <div class="d-flex flex-wrap justify-center mx-5">
     <section v-for="category in catalog" :key="category" class="my-5">
       <div class="wrapper">

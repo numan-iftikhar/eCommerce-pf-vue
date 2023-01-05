@@ -1,7 +1,11 @@
 <template>
   <Hero />
   <div class="product-cards">
-    <h2>Latest Products</h2>
+    <span
+      class="display-6 text-muted d-inline-block mb-5 border-bottom border-5"
+    >
+      Latest Products
+    </span>
     <ProductCard />
   </div>
 </template>
@@ -17,10 +21,6 @@ export default {
 </script>
 
 <style scoped>
-h2 {
-  font-size: 1.5rem;
-  text-align: center;
-}
 .product-cards {
   padding: 3rem 5rem;
   gap: 1rem;
