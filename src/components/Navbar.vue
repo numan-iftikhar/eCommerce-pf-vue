@@ -1,14 +1,11 @@
 <template>
   <nav>
-    <router-link to="/" class="logo">Vuejs</router-link>
-    <!-- <div class="search-wrapper">
-      <input v-model="searchText" type="text" />
-      <button @click="handleSearch" class="search-btn">>></button>
-    </div> -->
+    <router-link to="/" class="logo">eCommerce</router-link>
     <div class="search_wrap search_wrap_3">
       <div class="search_box">
         <input type="text" class="input" placeholder="Search..." />
         <div class="btn btn_common">
+          <!-- FIXME: Make search button work -->
           <i class="fas fa-search"></i>
         </div>
       </div>
@@ -39,19 +36,26 @@ export default {
         params: { query: this.searchText },
       });
     },
+    alpha() {
+      this.$store.commit("UPDATE_CART");
+      console.log(this.$store.state.cart);
+    },
+  },
+  mounted() {
+    console.log(this.$store.state);
   },
 };
 </script>
 <style scoped>
 .search_wrap {
-  width: 500px;
-  margin: 38px auto;
+  margin: 0 auto;
 }
 
 .search_wrap .search_box {
   position: relative;
-  width: 500px;
+  width: 35rem;
   height: 60px;
+  overflow: hidden;
 }
 
 .search_wrap .search_box .input {
@@ -64,7 +68,6 @@ export default {
   border-radius: 3px;
   font-size: 18px;
 }
-
 .search_wrap .search_box .btn {
   position: absolute;
   top: 0;
@@ -107,7 +110,7 @@ export default {
 
 .nav-links > * {
   margin-left: 2rem;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 a,
 .login-btn {
@@ -118,12 +121,15 @@ a:hover {
   text-decoration: underline;
 }
 nav {
-  background: #000080;
+  background: #764af1;
   padding: 1rem 2rem;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75);
 }
 .logo {
   font-size: 1.5rem;

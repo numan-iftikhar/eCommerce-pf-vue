@@ -1,5 +1,5 @@
 <template>
-  <Navbar />
+  <Navbar class="sticky-top" />
   <router-view />
   <Footer />
 </template>
@@ -15,3 +15,18 @@ export default {
   },
 };
 </script>
+
+<style>
+* {
+  font-family: "Montserrat", sans-serif;
+}
+#app {
+  background: rgb(235, 235, 235);
+}
+a {
+  text-decoration: none;
+}
+.btn-primary:hover {
+  box-shadow: 0 0 10px 5px rgb(193, 194, 255);
+}
+</style>

@@ -1,6 +1,5 @@
 <template>
   <Hero />
-
   <div class="product-cards">
     <h2>Latest Products</h2>
     <ProductCard />
@@ -26,5 +25,6 @@ h2 {
   padding: 3rem 5rem;
   gap: 1rem;
   overflow-x: auto;
+  background-color: #eee;
 }
 </style>

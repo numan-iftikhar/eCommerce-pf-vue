@@ -1,7 +1,15 @@
 <template>
   <div class="row justify-content-center">
     <div v-for="product in products" :key="product.id" class="col-md-4">
-      <div class="card my-3" style="border-radius: 15px">
+      <div
+        style="
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+            rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+            rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+            border-radius: 15px;
+        "
+        class="card my-3"
+      >
         <div style="height: 15rem">
           <img
             :src="product.thumbnail"
@@ -18,11 +26,11 @@
           <div class="d-flex justify-content-between">
             <div>
               <p>
-                <a href="#!" class="text-dark">{{ product.title }}</a>
+                <h5 class="text-dark">{{ product.title }}</h5>
               </p>
 
               <p>
-                <a href="#!" class="text-dark">${{ product.price }}</a>
+                <span class="text-dark">${{ product.price }}</span>
               </p>
             </div>
             <div>
@@ -38,7 +46,7 @@
             <router-link
               :to="{ name: 'SingleProduct', params: { id: product.id } }"
               type="button"
-              class="btn btn-primary"
+              class="btn btn-primary text-white"
               >View Details</router-link
             >
           </div>
@@ -49,11 +57,6 @@
 </template>
 
 <script>
-// import the package
-import VueAwesomePaginate from "vue-awesome-paginate";
-
-// import the necessary css file
-import "vue-awesome-paginate/dist/style.css";
 export default {
   data() {
     return {
@@ -62,7 +65,7 @@ export default {
   },
   methods: {
     getAllProducts() {
-      fetch("https://dummyjson.com/products")
+      fetch("https://dummyjson.com/products?limit=9")
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

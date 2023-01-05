@@ -25,7 +25,9 @@
           />
         </div>
         <div class="d-grid">
-          <button class="btn btn-primary" type="submit">Login</button>
+          <button class="btn btn-primary text-white" type="submit">
+            Login
+          </button>
         </div>
       </form>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <!-- Footer -->
   <div class="footer">
-    <div class="container">
+    <div class="wrapper">
       <div class="row">
         <div class="footer-col-1">
           <h3>Download Our App</h3>
@@ -16,7 +16,6 @@
         </div>
         <div class="footer-col-2">
           <div class="logo">eCommerce</div>
-          <!-- <img src="images/logo-white.png" alt="" /> -->
           <p>
             Lorem, ipsum dolor sit amet consectetur <br />adipisicing elit.
             Porro, eum?
@@ -53,7 +52,7 @@
   background: #000;
   color: #8a8a8a;
   font-size: 14px;
-  padding: 60px 0 20px;
+  padding: 3rem 10rem;
 }
 .footer p {
   color: #8a8a8a;

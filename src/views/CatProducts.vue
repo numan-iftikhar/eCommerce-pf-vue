@@ -1,7 +1,13 @@
 <template>
   <div class="row justify-content-center" style="width: 80%; margin: 5rem auto">
     <div v-for="product in catProducts" :key="product.id" class="col-md-4">
-      <div class="card my-3" style="border-radius: 15px">
+      <div
+        style="
+          box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+          border-radius: 15px;
+        "
+        class="card my-3"
+      >
         <div style="height: 15rem">
           <img
             :src="product.thumbnail"
@@ -18,11 +24,11 @@
           <div class="d-flex justify-content-between">
             <div>
               <p>
-                <a href="#!" class="text-dark">{{ product.title }}</a>
+                <h5 class="text-dark">{{ product.title }}</h5>
               </p>
 
               <p>
-                <a href="#!" class="text-dark">${{ product.price }}</a>
+                <span class="text-dark">${{ product.price }}</span>
               </p>
             </div>
             <div>
@@ -38,7 +44,7 @@
             <router-link
               :to="{ name: 'SingleProduct', params: { id: product.id } }"
               type="button"
-              class="btn btn-primary"
+              class="btn btn-primary text-white"
               >View Details</router-link
             >
           </div>

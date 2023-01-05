@@ -1,7 +1,6 @@
 <template>
   <h2 class="display-3 text-center mt-5">Catalog</h2>
   <div class="d-flex flex-wrap justify-center mx-5">
-    <!-- Tech section -->
     <section v-for="category in catalog" :key="category" class="my-5">
       <div class="wrapper">
         <router-link
@@ -50,10 +49,16 @@ export default {
   color: #b08bbb;
   margin: 1rem;
   text-transform: uppercase;
+  transition: all 0.3s;
+}
+.wrapper:hover {
+  background: #b08bbb;
+  color: #f5f5dc;
+  border: 3px solid white;
 }
 .cat-title {
-  color: #b08bbb;
-  transition: 0.5s;
+  color: inherit;
+  transition: all 0.3s;
 }
 .cat-title:hover {
   scale: 1.1;
