@@ -1,5 +1,11 @@
 <template>
-  <div class="container">
+  <img
+    v-if="loading"
+    class="mx-auto block"
+    src="../assets/images/spinner.gif"
+    alt="spinner"
+  />
+  <div v-else class="container">
     <section class="product my-5">
       <div class="product__photo">
         <div class="photo-container">
@@ -34,13 +40,18 @@ export default {
     return {
       productID: this.$route.params.id,
       productDetails: {}, // to be filled with api data of product details
+      loading: false,
     };
   },
 
   mounted() {
+    this.loading = true;
     fetch(`https://dummyjson.com/products/${this.productID}`)
       .then((res) => res.json())
-      .then((data) => (this.productDetails = data));
+      .then((data) => {
+        this.productDetails = data;
+        this.loading = false;
+      });
   },
 };
 </script>

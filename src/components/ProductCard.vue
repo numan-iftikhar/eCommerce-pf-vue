@@ -1,5 +1,6 @@
 <template>
-    <div v-if="products.length <= 0" class="my-10 text-center text-3xl text-gray-500">No products found!</div>
+    <img v-if="loading" class='mx-auto block' src="../assets/images/spinner.gif" alt="spinner" />
+    <div v-else-if="products.length <= 0" class="my-10 text-center text-3xl text-gray-500">No products found!</div>
   <div v-else class="row justify-content-center">
     <div v-for="product in products" :key="product.id" class="col-md-4">
       <div class="card my-3 drop-shadow-2xl">
@@ -54,15 +55,18 @@ export default {
   data() {
     return {
       products: [], // to be filled with api data
+      loading: false, // for displaying spinner while data is being fetched
     };
   },
   methods: {
     getAllProducts() {
+      this.loading = true;
       fetch("https://dummyjson.com/products?limit=9")
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
           this.products = data.products;
+          this.loading = false;
         });
     },
   },

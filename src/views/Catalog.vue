@@ -1,6 +1,12 @@
 <template>
   <h2 class="display-3 text-muted text-center mt-5">Catalog</h2>
-  <div class="d-flex flex-wrap justify-center mx-5">
+  <img
+    v-if="loading"
+    class="mx-auto block"
+    src="../assets/images/spinner.gif"
+    alt="spinner"
+  />
+  <div v-else class="d-flex flex-wrap justify-center mx-5">
     <section v-for="category in catalog" :key="category" class="my-5">
       <div class="wrapper">
         <router-link
@@ -19,13 +25,18 @@ export default {
   data() {
     return {
       catalog: [], // will be filled with api data
+      loading: false,
     };
   },
   methods: {
     getCategories() {
+      this.loading = true;
       fetch("https://dummyjson.com/products/categories")
         .then((res) => res.json())
-        .then((data) => (this.catalog = data));
+        .then((data) => {
+          this.catalog = data;
+          this.loading = false;
+        });
     },
   },
 
