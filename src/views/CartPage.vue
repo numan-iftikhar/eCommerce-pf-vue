@@ -196,5 +196,5 @@ const products = [
   // More products...
 ];
 
-const open = ref(true);
+const open = ref(false);
 </script>
