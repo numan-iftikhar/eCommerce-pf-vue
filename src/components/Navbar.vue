@@ -3,9 +3,13 @@
     <router-link to="/" class="logo">eCommerce</router-link>
     <div class="search_wrap search_wrap_3">
       <div class="search_box">
-        <input type="text" class="input" placeholder="Search..." />
-        <div class="btn btn_common">
-          <!-- FIXME: Make search button work -->
+        <input
+          v-model="searchText"
+          type="text"
+          class="input"
+          placeholder="Search..."
+        />
+        <div @click="handleSearch" class="btn btn_common">
           <i class="fas fa-search"></i>
         </div>
       </div>
@@ -46,7 +50,6 @@ export default {
 .search_wrap {
   margin: 0 auto;
 }
-
 .search_wrap .search_box {
   position: relative;
   width: 35rem;
