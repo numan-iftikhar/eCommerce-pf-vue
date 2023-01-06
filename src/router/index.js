@@ -29,6 +29,11 @@ const routes = [
     path: "/search/:query",
     component: () => import("@/views/SearchedProducts.vue"),
   },
+  // {
+  //   name: "CartPage",
+  //   path: "/cartpage",
+  //   component: () => import("@/views/CartPage.vue"),
+  // },
   {
     path: "/:notFound(.*)",
     component: () => import("@/views/ErrorPage.vue"),

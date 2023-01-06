@@ -2,7 +2,7 @@
   <Hero />
   <div class="product-cards">
     <span
-      class="display-6 text-muted d-inline-block mb-5 border-bottom border-5"
+      class="display-6 text-muted d-inline-block mb-5 border-bottom border-5 text-3xl text-rose-500"
     >
       Latest Products
     </span>

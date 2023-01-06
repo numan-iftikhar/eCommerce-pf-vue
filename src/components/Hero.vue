@@ -4,17 +4,13 @@
       <p>Top fashion for men</p>
       <h1>Best fashion for men</h1>
       <a href="#"
-        ><v-btn style="color: white" color="#6F00FF" elevation="2" large
+        ><v-btn style="color: white" color="#764af1" elevation="2" large
           >Learn More</v-btn
         ></a
       >
     </div>
   </div>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style scoped>
 .hero {

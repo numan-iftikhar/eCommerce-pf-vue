@@ -46,8 +46,8 @@
             <router-link
               :to="{ name: 'SingleProduct', params: { id: product.id } }"
               type="button"
-              class="btn btn-primary text-white"
-              >View Details</router-link
+              class="py-1 px-3 rounded-md bg-[#764af1] text-white shadow-xl hover:scale-110 transition-all"
+              >Get Info</router-link
             >
           </div>
         </div>

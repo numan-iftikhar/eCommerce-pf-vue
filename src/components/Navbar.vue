@@ -13,16 +13,19 @@
     <ul class="nav-links">
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/catalog">Catalog</router-link></li>
+      <li><CartPage /></li>
       <li>
         <router-link to="/login" class="login-btn"
-          ><v-btn color="secondary" elevation="2">Login</v-btn></router-link
+          ><v-btn color="yellow" elevation="2">Login</v-btn></router-link
         >
       </li>
     </ul>
   </nav>
 </template>
 <script>
+import CartPage from "../views/CartPage.vue";
 export default {
+  components: { CartPage },
   data() {
     return {
       searchText: "",
@@ -36,13 +39,6 @@ export default {
         params: { query: this.searchText },
       });
     },
-    alpha() {
-      this.$store.commit("UPDATE_CART");
-      console.log(this.$store.state.cart);
-    },
-  },
-  mounted() {
-    console.log(this.$store.state);
   },
 };
 </script>
@@ -55,7 +51,6 @@ export default {
   position: relative;
   width: 35rem;
   height: 60px;
-  overflow: hidden;
 }
 
 .search_wrap .search_box .input {
@@ -96,6 +91,7 @@ export default {
   border-radius: 50px;
   background: white;
   outline: none;
+  color: gray;
 }
 .search_wrap .search_box .btn {
   right: 0px;
@@ -112,14 +108,11 @@ export default {
   margin-left: 2rem;
   font-size: 1.2rem;
 }
-a,
-.login-btn {
-  color: #fff;
-  text-decoration: none;
+.nav-links a:hover {
+  color: yellow;
+  /* font-weight: bold; */
 }
-a:hover {
-  text-decoration: underline;
-}
+
 nav {
   background: #764af1;
   padding: 1rem 2rem;

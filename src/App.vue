@@ -1,5 +1,5 @@
 <template>
-  <Navbar class="sticky-top" />
+  <Navbar />
   <router-view />
   <Footer />
 </template>
@@ -26,7 +26,7 @@ export default {
 a {
   text-decoration: none;
 }
-.btn-primary:hover {
+/* .btn-primary:hover {
   box-shadow: 0 0 10px 5px rgb(193, 194, 255);
-}
+} */
 </style>
