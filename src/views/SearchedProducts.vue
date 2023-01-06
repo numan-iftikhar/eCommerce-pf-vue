@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!searchedProducts.length" class="my-10 text-center text-3xl text-gray-500">No products available</div>
+    <div v-if="searchedProducts.length <= 0" class="my-10 text-center text-3xl text-gray-500">No products found!</div>
   <div v-else class="row justify-content-center" style="width: 80%; margin: 5rem auto">
     <div v-for="product in searchedProducts" :key="product.id" class="col-md-4">
       <div

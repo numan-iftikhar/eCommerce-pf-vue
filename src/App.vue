@@ -3,8 +3,12 @@
   <router-view />
   <Footer />
 </template>
-
 <script>
+/*
+ - TODO: Add dropdown for login and logout
+ - TODO: Add counter on cart icon
+ - TODO: Add loader on all pages
+*/
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 

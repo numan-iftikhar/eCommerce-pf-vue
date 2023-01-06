@@ -1,5 +1,6 @@
 <template>
-  <div class="row justify-content-center">
+    <div v-if="products.length <= 0" class="my-10 text-center text-3xl text-gray-500">No products found!</div>
+  <div v-else class="row justify-content-center">
     <div v-for="product in products" :key="product.id" class="col-md-4">
       <div class="card my-3 drop-shadow-2xl">
         <div style="height: 15rem">

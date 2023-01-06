@@ -3,10 +3,10 @@
     <div class="hero-text">
       <p>Top fashion for men</p>
       <h1>Best fashion for men</h1>
-      <a href="#"
+      <router-link to="/catalog"
         ><v-btn style="color: white" color="#764af1" elevation="2" large
           >Learn More</v-btn
-        ></a
+        ></router-link
       >
     </div>
   </div>
