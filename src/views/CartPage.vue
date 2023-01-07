@@ -1,9 +1,13 @@
 <template>
   <button
     type="button"
-    class="-m-2 p-2 hover:text-yellow-200"
+    class="-m-2 p-2 hover:text-yellow-200 relative"
     @click="open = true"
   >
+    <span
+      class="cart-counter bg-yellow-400 absolute rounded-full h-5 w-5 text-sm text-black left-5 bottom-5"
+      >5</span
+    >
     <i class="fa-solid fa-cart-shopping"></i>
   </button>
   <TransitionRoot as="template" :show="open">

@@ -5,9 +5,9 @@
 </template>
 <script>
 /*
- - TODO: Add dropdown for login and logout
- - TODO: Add counter on cart icon
- - TODO: Add loader on all pages
+ - TODO: Add logout, sign up, login etc
+ - TODO: Code `add to cart` functionality
+ - Todo: 
 */
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
@@ -30,7 +30,4 @@ export default {
 a {
   text-decoration: none;
 }
-/* .btn-primary:hover {
-  box-shadow: 0 0 10px 5px rgb(193, 194, 255);
-} */
 </style>
