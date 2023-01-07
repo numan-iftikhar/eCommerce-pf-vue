@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="footer-col-2">
-          <div class="logo">eCommerce</div>
+          <div class="logo">Shopie</div>
           <p>
             Lorem, ipsum dolor sit amet consectetur <br />adipisicing elit.
             Porro, eum?
@@ -42,7 +42,7 @@
         </div>
       </div>
       <hr />
-      <p class="copyright">Copyright 2022 - ecommerce.com</p>
+      <p class="copyright">Copyright 2022 - Shopie.com</p>
     </div>
   </div>
 </template>

@@ -1,6 +1,9 @@
 <template>
   <nav>
-    <router-link to="/" class="logo">eCommerce</router-link>
+    <router-link to="/" class="logo"
+      ><span class="logo-slash">/</span> Shopie
+      <span class="logo-slash">/</span></router-link
+    >
     <div class="search_wrap search_wrap_3">
       <div class="search_box">
         <input
@@ -20,7 +23,7 @@
       <li><CartPage /></li>
       <li>
         <router-link to="/login" class="login-btn"
-          ><v-btn color="yellow" elevation="2">Login</v-btn></router-link
+          ><v-btn color="pink" elevation="2">Login</v-btn></router-link
         >
       </li>
     </ul>
@@ -112,11 +115,13 @@ export default {
   font-size: 1.2rem;
 }
 .nav-links a:hover {
-  color: yellow;
-  /* font-weight: bold; */
+  color: pink;
 }
 
 nav {
+  position: sticky; /* will take position in DOM */
+  top: 0;
+  z-index: 1;
   background: #764af1;
   padding: 1rem 2rem;
   color: #fff;
@@ -130,5 +135,14 @@ nav {
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
+  transition: all 0.3s;
+}
+.logo:hover {
+  color: pink;
+}
+.logo-slash {
+  color: pink;
+  font-weight: 900;
+  font-size: 1.5rem;
 }
 </style>
