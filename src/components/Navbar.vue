@@ -23,7 +23,9 @@
       <li><CartPage /></li>
       <li>
         <router-link to="/login" class="login-btn"
-          ><v-btn color="pink" elevation="2">Login</v-btn></router-link
+          ><v-btn class="text-white" color="rgb(256, 114, 182)" elevation="2"
+            >Login</v-btn
+          ></router-link
         >
       </li>
     </ul>

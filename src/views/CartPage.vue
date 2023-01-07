@@ -1,11 +1,11 @@
 <template>
   <button
     type="button"
-    class="-m-2 p-2 hover:text-yellow-200 relative"
+    class="-m-2 p-2 hover:text-pink-300 relative"
     @click="open = true"
   >
     <span
-      class="cart-counter bg-yellow-400 absolute rounded-full h-5 w-5 text-sm text-black left-5 bottom-5"
+      class="cart-counter bg-pink-400 absolute rounded-full h-5 w-5 text-sm text-white left-5 bottom-5"
       >5</span
     >
     <i class="fa-solid fa-cart-shopping"></i>
