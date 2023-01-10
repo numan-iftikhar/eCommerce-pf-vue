@@ -6,7 +6,7 @@
   >
     <span
       class="cart-counter bg-pink-400 absolute rounded-full h-5 w-5 text-sm text-white left-5 bottom-5"
-      >5</span
+      >{{ cartItemsCount }}</span
     >
     <i class="fa-solid fa-cart-shopping"></i>
   </button>
@@ -162,7 +162,8 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import store from "../store/index";
+import { ref, computed } from "vue";
 import {
   Dialog,
   DialogPanel,
@@ -199,6 +200,9 @@ const products = [
   },
   // More products...
 ];
-
+// a computed ref
+const cartItemsCount = computed(() => {
+  return store.state.cart.length;
+});
 const open = ref(false);
 </script>

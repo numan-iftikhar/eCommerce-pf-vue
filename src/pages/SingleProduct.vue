@@ -86,6 +86,7 @@
 
               <button
                 type="button"
+                @click="addToCart"
                 class="h-14 px-6 py-2 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white"
               >
                 Add to Cart
@@ -107,7 +108,12 @@ export default {
       loading: false,
     };
   },
-
+  methods: {
+    addToCart() {
+      // dispatch action
+      this.$store.dispatch("addProductToCart", this.productDetails);
+    },
+  },
   mounted() {
     this.loading = true;
     fetch(`https://dummyjson.com/products/${this.productID}`)

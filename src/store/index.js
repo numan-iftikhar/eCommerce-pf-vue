@@ -7,16 +7,16 @@ const store = createStore({
     };
   },
   mutations: {
-    UPDATE_CART(state, payload) {
-      state.cart = payload; // here payload is new array
+    UPDATE_CART(state, newCart) {
+      state.cart = newCart; // here newCart is new updated array
     },
   },
 
   actions: {
-    addToCart(context, payload) {
+    addProductToCart(context, productDetails) {
       const cart = context.state.cart;
-      cart.push(payload);
-      context.commit("UPDATE_CART", cart); // here cart is updated
+      cart.push(productDetails);
+      context.commit("UPDATE_CART", cart); // here cart has been updated
     },
   },
 });
