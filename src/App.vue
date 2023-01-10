@@ -4,11 +4,6 @@
   <Footer />
 </template>
 <script>
-/*
- - TODO: Add logout, sign up, login etc
- - TODO: Code `add to cart` functionality
- - Todo: Change single product page
-*/
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 

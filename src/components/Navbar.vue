@@ -32,7 +32,7 @@
   </nav>
 </template>
 <script>
-import CartPage from "../views/CartPage.vue";
+import CartPage from "../pages/CartPage.vue";
 export default {
   components: { CartPage },
   data() {

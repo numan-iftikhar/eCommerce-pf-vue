@@ -4,34 +4,34 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    component: () => import("@/views/Home.vue"),
+    component: () => import("@/pages/Home.vue"),
   },
   {
     path: "/login",
-    component: () => import("@/views/Login.vue"),
+    component: () => import("@/pages/Login.vue"),
   },
   {
     path: "/catalog",
-    component: () => import("@/views/Catalog.vue"),
+    component: () => import("@/pages/Catalog.vue"),
   },
   {
     name: "Catalog",
     path: "/catalog/:cat",
-    component: () => import("@/views/CatProducts.vue"),
+    component: () => import("@/pages/CatProducts.vue"),
   },
   {
     name: "SingleProduct",
     path: "/product/:id",
-    component: () => import("@/views/SingleProduct.vue"),
+    component: () => import("@/pages/SingleProduct.vue"),
   },
   {
     name: "SearchedProducts",
     path: "/search/:query",
-    component: () => import("@/views/SearchedProducts.vue"),
+    component: () => import("@/pages/SearchedProducts.vue"),
   },
   {
     path: "/:notFound(.*)",
-    component: () => import("@/views/ErrorPage.vue"),
+    component: () => import("@/pages/ErrorPage.vue"),
   },
 ];
 
