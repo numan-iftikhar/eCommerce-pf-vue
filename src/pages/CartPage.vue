@@ -65,7 +65,7 @@
                       <div class="flow-root">
                         <ul role="list" class="-my-6 divide-y divide-gray-200">
                           <li
-                            v-for="product in products"
+                            v-for="product in cartItems"
                             :key="product.id"
                             class="flex py-6"
                           >
@@ -73,8 +73,8 @@
                               class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200"
                             >
                               <img
-                                :src="product.imageSrc"
-                                :alt="product.imageAlt"
+                                :src="product.thumbnail"
+                                :alt="product.title"
                                 class="h-full w-full object-cover object-center"
                               />
                             </div>
@@ -85,27 +85,30 @@
                                   class="flex justify-between text-base font-medium text-gray-900"
                                 >
                                   <h3>
-                                    <a :href="product.href">{{
-                                      product.name
-                                    }}</a>
+                                    {{ product.title }}
                                   </h3>
-                                  <p class="ml-4">{{ product.price }}</p>
+                                  <p class="ml-4">${{ product.price }}.00</p>
                                 </div>
                                 <p class="mt-1 text-sm text-gray-500">
-                                  {{ product.color }}
+                                  {{ product.brand }}
                                 </p>
                               </div>
                               <div
                                 class="flex flex-1 items-end justify-between text-sm"
                               >
-                                <p class="text-gray-500">
-                                  Qty {{ product.quantity }}
-                                </p>
+                                <p class="text-gray-500">Qty 1</p>
 
                                 <div class="flex">
                                   <button
+                                    @click="
+                                      () =>
+                                        store.dispatch(
+                                          'removeProductFromCart',
+                                          product.id
+                                        )
+                                    "
                                     type="button"
-                                    class="font-medium text-indigo-600 hover:text-indigo-500"
+                                    class="font-medium hover:text-red-500 border hover:bg-red-200 rounded-lg p-1"
                                   >
                                     Remove
                                   </button>
@@ -123,7 +126,7 @@
                       class="flex justify-between text-base font-medium text-gray-900"
                     >
                       <p>Subtotal</p>
-                      <p>$262.00</p>
+                      <p>${{ totalPrice }}.00</p>
                     </div>
                     <p class="mt-0.5 text-sm text-gray-500">
                       Shipping and taxes calculated at checkout.
@@ -173,36 +176,21 @@ import {
 } from "@headlessui/vue";
 import { XMarkIcon } from "@heroicons/vue/24/outline";
 
-const products = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: "$90.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "$32.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-  // More products...
-];
 // a computed ref
 const cartItemsCount = computed(() => {
   return store.state.cart.length;
 });
+const cartItems = computed(() => {
+  return store.state.cart;
+});
+const totalPrice = computed(() => {
+  let priceArray = [];
+  store.state.cart.forEach((item) => priceArray.push(item.price));
+  return priceArray.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+});
+
 const open = ref(false);
 </script>

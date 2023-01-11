@@ -58,30 +58,16 @@
                 >
                   Qty
                 </div>
-                <select
-                  class="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1"
+                <div
+                  class="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-2 h-14 flex items-end pb-1"
                 >
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-
-                <svg
-                  class="w-5 h-5 text-gray-400 absolute right-0 bottom-0 mb-2 mr-2"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 9l4-4 4 4m0 6l-4 4-4-4"
+                  <input
+                    type="number"
+                    v-model="qty"
+                    class="border-none outline-none w-10 text-center"
+                    min="1"
                   />
-                </svg>
+                </div>
               </div>
 
               <button
@@ -106,12 +92,14 @@ export default {
       productID: this.$route.params.id,
       productDetails: {}, // to be filled with api data of product details
       loading: false,
+      qty: null,
     };
   },
+
   methods: {
     addToCart() {
       // dispatch action
-      this.$store.dispatch("addProductToCart", this.productDetails);
+      this.$store.dispatch("addProductToCart", [this.productDetails, this.qty]);
     },
   },
   mounted() {

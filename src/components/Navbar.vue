@@ -20,6 +20,8 @@
     <ul class="nav-links">
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/catalog">Catalog</router-link></li>
+
+      <!-- cart component -->
       <li><CartPage /></li>
       <li>
         <router-link to="/login" class="login-btn"

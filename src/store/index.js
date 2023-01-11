@@ -13,10 +13,15 @@ const store = createStore({
   },
 
   actions: {
-    addProductToCart(context, productDetails) {
+    addProductToCart(context, [productDetails, qty]) {
       const cart = context.state.cart;
-      cart.push(productDetails);
+      for (let i = 0; i < qty; i++) cart.push(productDetails);
       context.commit("UPDATE_CART", cart); // here cart has been updated
+    },
+    removeProductFromCart(context, prodId) {
+      const cart = context.state.cart;
+      const filteredCart = cart.filter((item) => item.id !== prodId);
+      context.commit("UPDATE_CART", filteredCart); // here cart has been updated
     },
   },
 });
