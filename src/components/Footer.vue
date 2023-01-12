@@ -52,7 +52,12 @@
   background: #000;
   color: #8a8a8a;
   font-size: 14px;
-  padding: 3rem 10rem;
+  padding: 3rem 0;
+  text-align: center;
+}
+.footer > .wrapper {
+  width: 70%;
+  margin: 0 auto;
 }
 .footer p {
   color: #8a8a8a;
@@ -65,7 +70,7 @@
 .footer-col-2,
 .footer-col-3,
 .footer-col-4 {
-  min-width: 250px;
+  min-width: 15.625rem;
   margin-bottom: 20px;
 }
 
@@ -78,9 +83,7 @@
   text-align: center;
 }
 .footer-col-2 .logo {
-  font-size: 2rem;
   color: white;
-  font-weight: bold;
 }
 .footer-col-3,
 .footer-col-4 {
@@ -96,6 +99,7 @@ ul {
 .app-logo img {
   width: 140px;
   margin-bottom: 1rem;
+  margin-inline: auto;
 }
 
 .footer hr {

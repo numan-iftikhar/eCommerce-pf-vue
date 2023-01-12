@@ -4,7 +4,7 @@
       ><span class="logo-slash">/</span> Shopie
       <span class="logo-slash">/</span></router-link
     >
-    <div class="search_wrap search_wrap_3">
+    <div class="search_wrap">
       <div class="search_box">
         <input
           v-model="searchText"
@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <ul class="nav-links">
+    <ul class="nav-links space-x-8">
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/catalog">Catalog</router-link></li>
 
@@ -55,14 +55,23 @@ export default {
 </script>
 <style scoped>
 .search_wrap {
-  margin: 0 auto;
+  width: 45%;
 }
 .search_wrap .search_box {
+  margin: 0 auto;
   position: relative;
-  width: 35rem;
   height: 60px;
 }
-
+@media screen and (max-width: 1000px) {
+  .search_wrap {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .search_wrap {
+    display: none;
+  }
+}
 .search_wrap .search_box .input {
   position: absolute;
   top: 0;
@@ -72,6 +81,11 @@ export default {
   padding: 10px 20px;
   border-radius: 3px;
   font-size: 18px;
+  padding-right: 80px;
+  border-radius: 50px;
+  background: white;
+  outline: none;
+  color: gray;
 }
 .search_wrap .search_box .btn {
   position: absolute;
@@ -82,6 +96,8 @@ export default {
   background: #7690da;
   z-index: 1;
   cursor: pointer;
+  right: 0px;
+  border-radius: 50%;
 }
 
 .search_wrap .search_box .btn:hover {
@@ -96,26 +112,22 @@ export default {
   color: #fff;
   font-size: 20px;
 }
-.search_wrap .search_box .input {
-  padding-right: 80px;
-  border-radius: 50px;
-  background: white;
-  outline: none;
-  color: gray;
-}
-.search_wrap .search_box .btn {
-  right: 0px;
-  border-radius: 50%;
-}
 .nav-links {
   display: flex;
   list-style: none;
   align-items: center;
   margin: auto 0;
 }
-
+@media screen and (max-width: 563px) {
+  .nav-links {
+    display: none;
+  }
+  .logo {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
 .nav-links > * {
-  margin-left: 2rem;
   font-size: 1.2rem;
 }
 .nav-links a:hover {
