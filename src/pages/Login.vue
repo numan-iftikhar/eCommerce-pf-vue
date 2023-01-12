@@ -60,7 +60,7 @@ export default {
         }),
       });
       const data = await res.json();
-      this.$store.dispatch("addUser", data);
+      this.$store.dispatch("addUser", data.token);
       localStorage.setItem("token", JSON.stringify(data.token));
       localStorage.setItem("username", JSON.stringify(data.username));
       localStorage.setItem("email", JSON.stringify(data.email));

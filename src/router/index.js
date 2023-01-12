@@ -34,6 +34,10 @@ const routes = [
     component: () => import("@/pages/SearchedProducts.vue"),
   },
   {
+    path: "/checkout",
+    component: () => import("@/pages/Checkout.vue"),
+  },
+  {
     path: "/:notFound(.*)",
     component: () => import("@/pages/ErrorPage.vue"),
   },

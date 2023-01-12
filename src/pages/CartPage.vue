@@ -133,6 +133,7 @@
                     </p>
                     <div class="mt-6">
                       <a
+                        @click="handleCheckout"
                         href="#"
                         class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                         >Checkout</a
@@ -167,6 +168,7 @@
 <script setup>
 import store from "../store/index";
 import { ref, computed } from "vue";
+
 import {
   Dialog,
   DialogPanel,
@@ -175,7 +177,17 @@ import {
   TransitionRoot,
 } from "@headlessui/vue";
 import { XMarkIcon } from "@heroicons/vue/24/outline";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
+
+// ------------- functions -------------- //
+function handleCheckout() {
+  let storeToken = store.state.userToken;
+
+  if (!storeToken) router.push("/login");
+  else router.push("/checkout");
+}
 // a computed ref
 const cartItemsCount = computed(() => {
   return store.state.cart.length;

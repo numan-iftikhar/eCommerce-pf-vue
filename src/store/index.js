@@ -4,15 +4,15 @@ const store = createStore({
   state() {
     return {
       cart: [],
-      userDetails: [],
+      userToken: null,
     };
   },
   mutations: {
     UPDATE_CART(state, newCart) {
       state.cart = newCart; // here newCart is new updated array
     },
-    UPDATE_USER(state, data) {
-      state.userDetails = data;
+    UPDATE_USER(state, token) {
+      state.userToken = token;
     },
   },
 
@@ -27,10 +27,8 @@ const store = createStore({
       const filteredCart = cart.filter((item) => item.id !== prodId);
       context.commit("UPDATE_CART", filteredCart); // here cart has been updated
     },
-    addUser(context, userData) {
-      let user = context.state.userDetails;
-      user.push(userData);
-      context.commit("UPDATE_USER", user);
+    addUser(context, token) {
+      context.commit("UPDATE_USER", token);
     },
   },
 });
