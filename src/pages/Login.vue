@@ -1,5 +1,9 @@
 <template>
-  <div class="vh-100 d-flex justify-content-center align-items-center">
+  <div class="password-hint text-black mt-5 ml-2">
+    <p><strong>username: </strong>kminchelle</p>
+    <p><strong>password: </strong>0lelplR</p>
+  </div>
+  <div class="my-10 d-flex justify-content-center align-items-center">
     <div
       class="col-md-5 p-5 shadow-sm border rounded-5 border-primary bg-white"
     >
@@ -25,7 +29,10 @@
           />
         </div>
         <div class="d-grid">
-          <button class="btn btn-primary text-white" type="submit">
+          <button
+            class="btn bg-pink-400 text-white hover:bg-pink-500"
+            type="submit"
+          >
             Login
           </button>
         </div>
