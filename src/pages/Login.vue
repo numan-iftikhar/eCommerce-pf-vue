@@ -60,12 +60,12 @@ export default {
         }),
       });
       const data = await res.json();
+      this.$store.dispatch("addUser", data);
       localStorage.setItem("token", JSON.stringify(data.token));
       localStorage.setItem("username", JSON.stringify(data.username));
       localStorage.setItem("email", JSON.stringify(data.email));
       localStorage.setItem("firstName", JSON.stringify(data.firstName));
       localStorage.setItem("lastName", JSON.stringify(data.lastName));
-      console.log(data);
       if (data.message != "Invalid credentials")
         this.$router.replace({ path: "/" });
     },
