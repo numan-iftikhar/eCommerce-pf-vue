@@ -48,20 +48,33 @@
       </div>
     </div>
   </div>
+  <pagination
+      :totalPages="12"
+      :perPage="10"
+      :currentPage="currentPage"
+      @pagechanged="onPageChange"
+    />
 </template>
 
 <script>
+import Pagination from './Pagination.vue'
 export default {
+  components:{
+    Pagination,
+  },
   data() {
     return {
       products: [], // to be filled with api data
       loading: false, // for displaying spinner while data is being fetched
+      currentPage: 1,
+      limit: 9,
+      skip: 0,
     };
   },
   methods: {
     getAllProducts() {
       this.loading = true;
-      fetch("https://dummyjson.com/products?limit=9")
+      fetch(`https://dummyjson.com/products?limit=${this.limit}&skip=${this.skip}`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -69,6 +82,14 @@ export default {
           this.loading = false;
         });
     },
+    onPageChange(page) {
+      this.currentPage = page;
+      if(page){
+        this.skip = this.limit*(page-1);
+      }
+
+      this.getAllProducts();
+    }
   },
 
   created() {
