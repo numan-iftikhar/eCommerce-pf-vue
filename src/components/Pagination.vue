@@ -18,7 +18,12 @@
 
     <!-- Visible Buttons Start -->
 
-    <li v-for="page in pages" :key="page.name" class="pagination-item">
+    <li
+      v-for="page in pages"
+      :key="page.name"
+      class="pagination-item"
+      :class="{ active: isPageActive(page.name) }"
+    >
       <button
         type="button"
         @click="onClickPage(page.name)"
@@ -134,11 +139,10 @@ export default {
 .pagination {
   list-style-type: none;
 }
-
 .pagination-item {
   display: inline-block;
   border: 1px solid lightgray;
-  padding: 5px;
+  padding: 5px 12px;
   border-radius: 5px;
 }
 .pagination-item:hover {
@@ -146,7 +150,7 @@ export default {
 }
 
 .active {
-  background-color: #4aae9b;
-  color: #ffffff;
+  background-color: pink;
+  color: #000;
 }
 </style>
