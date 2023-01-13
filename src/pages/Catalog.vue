@@ -1,5 +1,7 @@
 <template>
-  <h2 class="display-3 text-muted text-center mt-5">Catalog</h2>
+  <span class="text-5xl text-gray-400 block font-bold text-center mt-10">
+    Catalog
+  </span>
   <img
     v-if="loading"
     class="mx-auto block"
@@ -48,7 +50,7 @@ export default {
 
 <style scoped>
 .wrapper {
-  border: 1px solid #b08bbb;
+  /* border: 1px solid #b08bbb; */
   width: 12rem;
   height: 12rem;
   display: flex;
@@ -57,13 +59,14 @@ export default {
   border-radius: 10px;
   gap: 1rem;
   background: #f5f5dc;
-  color: #b08bbb;
+  color: rgb(143, 143, 143);
   margin: 1rem;
   text-transform: uppercase;
   transition: all 0.3s;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .wrapper:hover {
-  background: #b08bbb;
+  background: rgb(244 114 182);
   color: #f5f5dc;
   border: 3px solid white;
 }

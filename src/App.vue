@@ -20,7 +20,7 @@ export default {
   font-family: "Montserrat", sans-serif;
 }
 #app {
-  background: rgb(235, 235, 235);
+  /* background: rgb(235, 235, 235); */
 }
 a {
   text-decoration: none;

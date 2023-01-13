@@ -1,9 +1,7 @@
 <template>
   <Hero />
   <div class="product-cards">
-    <span
-      class="display-6 text-muted d-inline-block mb-5 border-bottom border-5 text-3xl text-rose-500"
-    >
+    <span class="text-5xl text-gray-400 font-bold block text-center mb-5">
       Latest Products
     </span>
     <ProductCard />
