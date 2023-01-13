@@ -54,6 +54,33 @@ export default {
 };
 </script>
 <style scoped>
+nav {
+  position: sticky; /* will take position in DOM */
+  top: 0;
+  z-index: 1;
+  background: #764af1;
+  padding: 1rem 2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+.logo:hover {
+  color: pink;
+}
+.logo-slash {
+  color: pink;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
 .search_wrap {
   width: 45%;
 }
@@ -132,33 +159,5 @@ export default {
 }
 .nav-links a:hover {
   color: pink;
-}
-
-nav {
-  position: sticky; /* will take position in DOM */
-  top: 0;
-  z-index: 1;
-  background: #764af1;
-  padding: 1rem 2rem;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75);
-}
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  transition: all 0.3s;
-}
-.logo:hover {
-  color: pink;
-}
-.logo-slash {
-  color: pink;
-  font-weight: 900;
-  font-size: 1.5rem;
 }
 </style>

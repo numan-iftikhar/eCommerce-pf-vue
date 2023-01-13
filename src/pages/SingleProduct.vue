@@ -5,7 +5,7 @@
     src="../assets/images/spinner.gif"
     alt="spinner"
   />
-  <div class="antialiased">
+  <div class="antialiased bg-gray-100">
     <div class="py-6">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
         <div class="flex flex-col md:flex-row -mx-4">
