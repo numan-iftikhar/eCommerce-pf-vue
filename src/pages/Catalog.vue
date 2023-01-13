@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import { getAllCategories } from "@/services/service";
 export default {
   data() {
     return {
@@ -31,8 +32,7 @@ export default {
   methods: {
     getCategories() {
       this.loading = true;
-      fetch("https://dummyjson.com/products/categories")
-        .then((res) => res.json())
+      getAllCategories() // imported from service.js
         .then((data) => {
           this.catalog = data;
           this.loading = false;

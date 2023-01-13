@@ -58,6 +58,7 @@
 
 <script>
 import Pagination from './Pagination.vue'
+import { getAllProducts } from '@/services/service';
 export default {
   components:{
     Pagination,
@@ -74,8 +75,7 @@ export default {
   methods: {
     getAllProducts() {
       this.loading = true;
-      fetch(`https://dummyjson.com/products?limit=${this.limit}&skip=${this.skip}`)
-        .then((res) => res.json())
+      getAllProducts(this.limit, this.skip)
         .then((data) => {
           console.log(data);
           this.products = data.products;

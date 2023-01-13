@@ -86,6 +86,7 @@
 </template>
 
 <script>
+import { getSingleProduct } from "@/services/service";
 export default {
   data() {
     return {
@@ -104,13 +105,10 @@ export default {
   },
   mounted() {
     this.loading = true;
-    fetch(`https://dummyjson.com/products/${this.productID}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        this.productDetails = data;
-        this.loading = false;
-      });
+    getSingleProduct(this.productID).then((data) => {
+      this.productDetails = data;
+      this.loading = false;
+    });
   },
 };
 </script>

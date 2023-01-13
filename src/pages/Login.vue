@@ -41,6 +41,8 @@
   </div>
 </template>
 <script>
+import { authenticateUser } from "@/services/service";
+
 export default {
   data() {
     return {
@@ -50,24 +52,27 @@ export default {
   },
   methods: {
     async validateUser() {
-      const res = await fetch("https://dummyjson.com/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          username: this.username,
-          password: this.password,
-          // expiresInMins: 60
-        }),
+      // const res = await fetch("https://dummyjson.com/auth/login", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({
+      //     username: this.username,
+      //     password: this.password,
+      //     // expiresInMins: 60
+      //   }),
+      // });
+      // const data = await res.json();
+      authenticateUser(this.username, this.password).then((data) => {
+        this.$store.dispatch("addUser", data.token);
+        localStorage.setItem("token", JSON.stringify(data.token));
+        localStorage.setItem("username", JSON.stringify(data.username));
+        localStorage.setItem("email", JSON.stringify(data.email));
+        localStorage.setItem("firstName", JSON.stringify(data.firstName));
+        localStorage.setItem("lastName", JSON.stringify(data.lastName));
+        if (data.message != "Invalid credentials")
+          this.$router.replace({ path: "/" });
+        else alert("username or password is incorrect!");
       });
-      const data = await res.json();
-      this.$store.dispatch("addUser", data.token);
-      localStorage.setItem("token", JSON.stringify(data.token));
-      localStorage.setItem("username", JSON.stringify(data.username));
-      localStorage.setItem("email", JSON.stringify(data.email));
-      localStorage.setItem("firstName", JSON.stringify(data.firstName));
-      localStorage.setItem("lastName", JSON.stringify(data.lastName));
-      if (data.message != "Invalid credentials")
-        this.$router.replace({ path: "/" });
     },
   },
 };

@@ -58,6 +58,7 @@
   </div>
 </template>
 <script>
+import { searchProducts } from "@/services/service"
 export default {
   name: "SearchProducts",
   data() {
@@ -70,10 +71,10 @@ export default {
   methods: {
     getSearchedProducts() {
       this.loading = true;
-      fetch(`https://dummyjson.com/products/search?q=${this.query}`)
-        .then((res) => res.json())
-        .then((data) => {this.searchedProducts = data.products
-        this.loading = false;});
+      searchProducts(this.query).then((data) => {
+        this.searchedProducts = data.products
+        this.loading = false;
+      });
     },
   },
 

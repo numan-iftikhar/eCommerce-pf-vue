@@ -56,6 +56,7 @@
   </div>
 </template>
 <script>
+import { getAllProductsOfCategory } from "@/services/service";
 export default {
   data() {
     return {
@@ -68,10 +69,11 @@ export default {
   // api call to get products of specific category
   mounted() {
     this.loading=true;
-    fetch(`https://dummyjson.com/products/category/${this.type}`)
-      .then((res) => res.json())
-      .then((data) => {this.catProducts = data.products
-      this.loading = false;});
+    getAllProductsOfCategory(this.type)
+      .then((data) => {
+        this.catProducts = data.products
+        this.loading = false;
+    });
   },
 };
 </script>
