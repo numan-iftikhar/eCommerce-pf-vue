@@ -4,7 +4,11 @@
       <p>Top fashion for men</p>
       <h1>Best fashion for men</h1>
       <router-link to="/catalog"
-        ><v-btn style="color: white" color="#764af1" elevation="2" large
+        ><v-btn
+          style="color: white"
+          color="rgb(256, 114, 182)"
+          elevation="2"
+          large
           >Learn More</v-btn
         ></router-link
       >
