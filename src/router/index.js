@@ -38,6 +38,10 @@ const routes = [
     component: () => import("@/pages/Checkout.vue"),
   },
   {
+    path: "/add-product",
+    component: () => import("@/pages/AddProduct.vue"),
+  },
+  {
     path: "/:notFound(.*)",
     component: () => import("@/pages/ErrorPage.vue"),
   },

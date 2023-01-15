@@ -41,3 +41,17 @@ export async function getSingleProduct(prodId) {
   const res = await fetch(`${baseURL}/products/${prodId}`);
   return await res.json();
 }
+
+// -------------- api call to add new product -------------- //
+export async function addNewProduct(title, brand, price) {
+  const res = await fetch("https://dummyjson.com/products/add", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      title: title,
+      brand: brand,
+      price: price,
+    }),
+  });
+  return await res.json();
+}
