@@ -55,3 +55,11 @@ export async function addNewProduct(title, brand, price) {
   });
   return await res.json();
 }
+
+// ------------------ api call to delete product ------------ //
+export async function deleteProduct(id) {
+  const res = await fetch(`https://dummyjson.com/products/${id}`, {
+    method: "DELETE",
+  });
+  return await res.json();
+}
