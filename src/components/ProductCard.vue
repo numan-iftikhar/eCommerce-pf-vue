@@ -2,7 +2,7 @@
     <img v-if="loading" class='mx-auto block' src="../assets/images/spinner.gif" alt="spinner" />
     <div v-else-if="products.length <= 0" class="my-10 text-center text-3xl text-gray-500">No products found!</div>
   <div v-else class="row justify-content-center">
-    <div v-for="product in products" :key="product.id" class="col-md-4" >
+    <div v-for="(product,index) in products" :key="product.id" class="col-md-4" >
       <div class="card my-3 drop-shadow-2xl">
         <div style="height: 15rem">
           <img
@@ -43,7 +43,7 @@
               class="py-1 px-3 rounded-md bg-[#764af1] text-white shadow-xl hover:scale-110 transition-all"
               >Get Info</router-link
             >
-            <button @click="deleteProduct(product.id)" ><i class="fa-solid fa-trash border p-2 rounded-md text-red-600 bg-red-200 hover:bg-red-300 cursor-pointer"></i></button>
+            <button @click="deleteProduct(product.id,index)" ><i class="fa-solid fa-trash border p-2 rounded-md text-red-600 bg-red-200 hover:bg-red-300 cursor-pointer"></i></button>
           </div>
         </div>
       </div>
@@ -84,8 +84,11 @@ export default {
         });
     },
 
-    deleteProduct(id){
-      deleteProduct(id).then(data => alert(`${data.title} has successfully been deleted`))
+    deleteProduct(id, index){
+      deleteProduct(id).then(data => {
+        alert(`${data.title} has successfully been deleted`);
+        this.products.splice(index, 1);  
+    })
     },
     onPageChange(page) {
       this.currentPage = page;
