@@ -83,15 +83,69 @@
       </div>
     </div>
   </div>
+
+  <section class="related-products">
+    <span class="text-5xl text-gray-400 font-bold block text-center my-5">
+      Related Products
+    </span>
+    <div class="row justify-content-center sm:px-5 md:px-10 md:mb-10">
+    <div v-for="(product, index) in relatedProducts" :key="product.id" class="col-md-4" >
+      <div class="card my-3 drop-shadow-2xl">
+        <div style="height: 15rem">
+          <img
+            :src="product.thumbnail"
+            style="
+              border-top-left-radius: 15px;
+              border-top-right-radius: 15px;
+              object-fit: fill;
+            "
+            class="img-fluid h-100 w-100"
+            :alt="title"
+          />
+        </div>
+        <div class="card-body pb-0">
+          <div class="d-flex justify-content-between">
+            <div>
+              <p>
+                <h5 class="text-dark">{{ product.title }}</h5>
+              </p>
+
+              <p>
+                <span class="text-dark">${{ product.price }}</span>
+              </p>
+            </div>
+            <div>
+              <p class="small text-muted">Rated {{ product.rating }}/5</p>
+              <p class="small text-muted">{{ product.category }}</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-0" />
+        <div class="card-body">
+          <div class="text-center pb-2">
+            <router-link
+              :to="{ name: 'SingleProduct', params: { id: product.id } }"
+              type="button"
+              class="py-1 px-3 rounded-md bg-[#764af1] text-white shadow-xl hover:scale-110 transition-all"
+              >Get Info</router-link
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
 </template>
 
 <script>
-import { getSingleProduct } from "@/services/service";
+import { getRelatedProducts, getSingleProduct } from "@/services/service";
 export default {
   data() {
     return {
       productID: this.$route.params.id,
       productDetails: {}, // to be filled with api data of product details
+      relatedProducts: [], // to be filled with api data of related products
       loading: false,
       qty: null,
     };
@@ -107,8 +161,12 @@ export default {
     this.loading = true;
     getSingleProduct(this.productID).then((data) => {
       this.productDetails = data;
+      // this function is coming from service.js
+      getRelatedProducts(this.productDetails.category)
+      .then(data => this.relatedProducts = data.products);
       this.loading = false;
     });
+
   },
 };
 </script>

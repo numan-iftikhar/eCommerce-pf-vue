@@ -63,3 +63,11 @@ export async function deleteProduct(id) {
   });
   return await res.json();
 }
+
+// ------------ api call to fetch related products --------------- //
+export async function getRelatedProducts(category) {
+  const res = await fetch(
+    `https://dummyjson.com/products/category/${category}`
+  );
+  return await res.json();
+}
