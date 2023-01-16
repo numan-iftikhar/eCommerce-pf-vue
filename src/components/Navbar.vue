@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <ul class="nav-links space-x-8">
+    <ul class="nav-links space-x-2 md:space-x-8">
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/catalog">Catalog</router-link></li>
       <li><router-link to="/add-product">Add Product</router-link></li>
