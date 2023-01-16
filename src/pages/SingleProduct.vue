@@ -89,7 +89,7 @@
       Related Products
     </span>
     <div class="row justify-content-center sm:px-5 md:px-10 md:mb-10">
-    <div v-for="(product, index) in relatedProducts" :key="product.id" class="col-md-4" >
+    <div v-for="(product) in relatedProducts" :key="product.id" class="col-md-4" >
       <div class="card my-3 drop-shadow-2xl">
         <div style="height: 15rem">
           <img
@@ -153,6 +153,7 @@ export default {
 
   methods: {
     addToCart() {
+      if(isNaN(this.qty) || this.qty < 1) this.qty = 1;
       // dispatch action
       this.$store.dispatch("addProductToCart", [this.productDetails, this.qty]);
     },
