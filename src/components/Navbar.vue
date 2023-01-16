@@ -20,6 +20,7 @@
     <ul class="nav-links space-x-8">
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/catalog">Catalog</router-link></li>
+      <li><router-link to="/add-product">Add Product</router-link></li>
 
       <!-- cart component -->
       <li><CartPage /></li>
@@ -82,22 +83,12 @@ nav {
   font-size: 1.5rem;
 }
 .search_wrap {
-  width: 45%;
+  width: 34%;
 }
 .search_wrap .search_box {
   margin: 0 auto;
   position: relative;
   height: 60px;
-}
-@media screen and (max-width: 1000px) {
-  .search_wrap {
-    width: 30%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .search_wrap {
-    display: none;
-  }
 }
 .search_wrap .search_box .input {
   position: absolute;
@@ -145,19 +136,39 @@ nav {
   align-items: center;
   margin: auto 0;
 }
-@media screen and (max-width: 563px) {
-  .nav-links {
-    display: none;
-  }
-  .logo {
-    text-align: center;
-    margin: 0 auto;
-  }
-}
+
 .nav-links > * {
   font-size: 1.2rem;
 }
 .nav-links a:hover {
   color: pink;
+}
+@media screen and (max-width: 1000px) {
+  .search_wrap {
+    width: 20%;
+  }
+}
+@media screen and (max-width: 870px) {
+  .search_wrap {
+    display: none;
+  }
+}
+@media screen and (max-width: 690px) {
+  nav {
+    padding: 10px 10px;
+  }
+  .nav-links > * {
+    font-size: small;
+  }
+  li:nth-child(1) {
+    display: none;
+  }
+  .logo,
+  .logo-slash {
+    font-size: small;
+  }
+  .login-btn {
+    display: none;
+  }
 }
 </style>
