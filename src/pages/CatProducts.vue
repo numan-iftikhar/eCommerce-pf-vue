@@ -1,7 +1,11 @@
 <template>
   <img v-if="loading" class='mx-auto block' src="../assets/images/spinner.gif" alt="spinner" />
   <div v-else-if="catProducts.length <= 0" class="my-10 text-center text-3xl text-gray-500">No products found!</div>
-  <div v-else class="row justify-content-center" style="width: 80%; margin: 5rem auto">
+  <section v-else class="cat-products">
+    <span class="text-5xl text-gray-400 block font-bold text-center my-5">
+    {{ catProducts[0].category.charAt(0).toUpperCase() + catProducts[0].category.slice(1) }}
+  </span>
+  <div class="row justify-content-center container mx-auto">
     <div v-for="product in catProducts" :key="product.id" class="col-md-4">
       <div
         style="
@@ -54,6 +58,7 @@
       </div>
     </div>
   </div>
+  </section>
 </template>
 <script>
 import { getAllProductsOfCategory } from "@/services/service";

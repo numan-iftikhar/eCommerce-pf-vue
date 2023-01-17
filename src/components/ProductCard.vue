@@ -1,7 +1,7 @@
 <template>
     <img v-if="loading" class='mx-auto block' src="../assets/images/spinner.gif" alt="spinner" />
     <div v-else-if="products.length <= 0" class="my-10 text-center text-3xl text-gray-500">No products found!</div>
-  <div v-else class="row justify-content-center p-1 p-md-5">
+  <div v-else class="row justify-content-center p-3 p-md-5">
     <div v-for="(product,index) in products" :key="product.id" class="col-md-4" >
       <div class="card my-3 drop-shadow-2xl">
         <div style="height: 15rem">

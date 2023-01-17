@@ -1,5 +1,5 @@
 <template>
-  <ul class="pagination flex justify-center gap-3 mt-10">
+  <ul class="pagination flex justify-center flex-wrap gap-3 mt-10">
     <li class="pagination-item">
       <button type="button" @click="onClickFirstPage" :disabled="isInFirstPage">
         First
