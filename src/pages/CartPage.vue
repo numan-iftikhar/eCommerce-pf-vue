@@ -131,13 +131,22 @@
                     <p class="mt-0.5 text-sm text-gray-500">
                       Shipping and taxes calculated at checkout.
                     </p>
-                    <div class="mt-6">
-                      <a
+                    <div class="mt-6" @click="open = false">
+                      <div
+                        class="ml-3 flex h-7 items-center"
                         @click="handleCheckout"
-                        href="#"
-                        class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-                        >Checkout</a
                       >
+                        <button
+                          type="button"
+                          class="-m-2 p-2 text-gray-400 hover:text-gray-500 w-full"
+                        >
+                          <a
+                            @click="handleCheckout"
+                            class="rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                            >Checkout</a
+                          >
+                        </button>
+                      </div>
                     </div>
                     <div
                       class="mt-6 flex justify-center text-center text-sm text-gray-500"
@@ -204,5 +213,5 @@ const totalPrice = computed(() => {
   );
 });
 
-const open = ref(false);
+let open = ref(false);
 </script>
