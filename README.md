@@ -1,4 +1,5 @@
 # Ecommerce Website
+[See live site here](https://e-commerce-app-vue.netlify.app/home)
 ## Project setup
 
 ```
