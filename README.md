@@ -1,5 +1,24 @@
 # Ecommerce Website
+## Project setup
 
+```
+# npm
+npm install
+```
+
+### Compiles and hot-reloads for development
+
+```
+# npm
+npm run dev
+```
+
+### Compiles and minifies for production
+
+```
+# npm
+npm run build
+```
 ### Front-End Development Deliverables
 - Web Design 
 - Website Development
@@ -52,30 +71,7 @@ At the end of the project I managed to achieve a great success with a well-made 
 
 ###### The Shopping Cart Page
 
-![Shopping Cart Page](./src/assets/images/cart.png)
+![Shopping Cart Page](./src/assets/images/cart.PNG)
 ###### The Add Product Page
 
 ![Add Product Page](./src/assets/images/add-product.png)
-
-# default
-
-## Project setup
-
-```
-# npm
-npm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-# npm
-npm run dev
-```
-
-### Compiles and minifies for production
-
-```
-# npm
-npm run build
-```
