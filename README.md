@@ -34,94 +34,48 @@ At the end of the project I managed to achieve a great success with a well-made 
 
 ###### The main page of ecommerce website
 
-![1 Main Page of ecommerce website](./src/assets/images/home.png)
+![Main Page of ecommerce website](./src/assets/images/home.png)
 
-###### The authentification page of ecommerce website
+###### The authentication page of ecommerce website
 
-![2 Login Page](https://user-images.githubusercontent.com/75227040/134665787-a5166309-c3c6-47ce-baf4-090053ea4a2e.png)
+![Login Page](./src/assets/images/login.png)
+###### The catalog page of ecommerce website
 
-###### The registration page of ecommerce website
+![Catalog Page](./src/assets/images/catalog.png)
+###### The category products page of ecommerce website
 
-![3 SignUp Page](https://user-images.githubusercontent.com/75227040/134665870-7b19d369-349f-451f-af3e-5f0e3f495b74.png)
-
-###### The Customer profile page where he can edit his data
-
-![4 Profile Page](https://user-images.githubusercontent.com/75227040/134667231-dffa1330-d613-428d-8d6f-42f06c3b1776.png)
-
-###### The Products Page where you can choose a specific product to buy
-
-![5 Products Page](https://user-images.githubusercontent.com/75227040/134667348-2990f686-518e-4a6c-8989-8feccd7cfe03.png)
+![Category Products](./src/assets/images/cat-product.png)
 
 ###### The Product details Page
 
-![6 Product Details Page](https://user-images.githubusercontent.com/75227040/134667664-c9263b8c-5a69-4712-b798-66f6a104725b.png)
+![Product Details Page](./src/assets/images/single-product.png)
 
 ###### The Shopping Cart Page
 
-![7 Shopping Cart Page](https://user-images.githubusercontent.com/75227040/134667726-7524aa3e-e860-4bef-ba05-aa8177c67bd8.png)
+![Shopping Cart Page](./src/assets/images/cart.png)
+###### The Add Product Page
 
-###### The Payment Page
-
-![8 Payment Page](https://user-images.githubusercontent.com/75227040/134667784-a79ca706-fc37-40ef-b093-4fe23fe58075.png)
-
-###### Dashboard authentication (Login)
-
-![1 ADMIN AUTHENTIFICATION PAGE](https://user-images.githubusercontent.com/75227040/134668927-7efe7b11-e53c-4cb9-a73a-3d2fe79c9c14.png)
-
-###### The main dashboard page
-
-![2 Dashboard Page](https://user-images.githubusercontent.com/75227040/134668973-aa408356-d84f-4ed0-8dbe-658b64e8643f.png)
-
-###### The products management page
-
-![3 Products Management page](https://user-images.githubusercontent.com/75227040/134669026-ba2169f1-3154-4c9a-a6f2-e2f9e19f5d7e.png)
-
-###### The categories management page
-
-![4 Categories management page](https://user-images.githubusercontent.com/75227040/134669065-d48882fc-5b2d-4996-8c66-b245a444dce9.png)
-
+![Add Product Page](./src/assets/images/add-product.png)
 
 # default
 
 ## Project setup
 
 ```
-# yarn
-yarn
-
 # npm
 npm install
-
-# pnpm
-pnpm install
 ```
 
 ### Compiles and hot-reloads for development
 
 ```
-# yarn
-yarn dev
-
 # npm
 npm run dev
-
-# pnpm
-pnpm dev
 ```
 
 ### Compiles and minifies for production
 
 ```
-# yarn
-yarn build
-
 # npm
 npm run build
-
-# pnpm
-pnpm build
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
